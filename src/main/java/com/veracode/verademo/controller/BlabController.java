@@ -29,9 +29,43 @@ import com.veracode.verademo.model.Blabber;
 import com.veracode.verademo.model.Comment;
 import com.veracode.verademo.utils.Constants;
 
+
+import java.io.ByteArrayInputStream;
+
 @Controller
 @Scope("request")
 public class BlabController {
+	
+	// start
+	/*
+
+	public class start {
+
+	  public static void main(String[] args) throws Exception {
+	    String candidate = args[0];
+	    String hashed = BCrypt.hashpw(candidate, BCrypt.gensalt(12));
+
+	    BCrypt.checkpw(candidate, hashed);
+
+	    filterXMLSignature();
+
+	    // Update Advisor: changed in the upgrade from Spring Web 3.1.1.RELEASE to 3.2.15.RELEASE
+	    UriUtils.encodeFragment("", "");
+	  }
+
+	  private static void filterXMLSignature() {
+	    byte[] bytes = new byte[256];
+
+	    new MultipartStream(new ByteArrayInputStream(bytes), bytes);
+
+	    new XMLSignatureInput(bytes).addNodeFilter(null);
+	  }
+	}
+	
+	// end
+	*/
+	
+	
 	private static final Logger logger = LogManager.getLogger("VeraDemo:BlabController");
 
 	private final String sqlBlabsByMe = "SELECT blabs.content, blabs.timestamp, COUNT(comments.blabber), blabs.blabid "
